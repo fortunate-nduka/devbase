@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Header = () => {
   return (
-    <header className='flex items-center justify-between h-20 p-2'>
+    <header className='flex items-center justify-between h-20 px-5'>
       <Link to='/'>
         <img src={logo} alt='logo' className='cursor-pointer w-14' />
       </Link>
