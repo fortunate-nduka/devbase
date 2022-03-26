@@ -30,7 +30,7 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className='px-5 py-10 bg-[#f3f4f5] grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+    <div className='px-5 py-10 bg-[#f3f4f5] grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
       {posts.map((post) => (
         <div key={post._id} className='shadow-2xl rounded-md'>
           {post.mainImage && post.mainImage.asset && (
@@ -40,10 +40,14 @@ const Posts = () => {
               className='rounded-tl-md rounded-tr-md'
             />
           )}
-          <div className='bg-white px-3 py-5'>
-            <Moment dateToFormat={post.publishedAt} fromNow />
-            <h2 className='font-black text-2xl'>{post.title}</h2>
-            <div className='flex'>
+          <div className='bg-white px-3 py-5 rounded-bl-md rounded-br-md'>
+            <Moment
+              className='text-sm font-semibold text-gray-500 tracking-wider'
+              dateToFormat={post.publishedAt}
+              fromNow
+            />
+            <h2 className='font-black text-2xl pt-2 pb-2'>{post.title}</h2>
+            <div className='flex text-sm font-semibold text-gray-500 tracking-wider pb-2'>
               By
               {post.author.image && post.author.image.asset && (
                 <img
@@ -54,7 +58,9 @@ const Posts = () => {
               )}
               <div className=''>{post.author.name}</div>
             </div>
-            <p>{post.description.slice(0, 200)}</p>
+            <p className='text-sm font-semibold text-gray-500 tracking-wider'>
+              {post.description.slice(0, 200)}
+            </p>
           </div>
         </div>
       ))}
