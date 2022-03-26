@@ -43,14 +43,14 @@ const Posts = () => {
           <div className='bg-white px-3 sm:px-5 py-6 h-auto'>
             <Moment
               fromNow
-              className='text-sm font-medium text-gray-500 tracking-wider'
+              className='text-sm font-medium tracking-wider text-gray-500'
             >
               {post.publishedAt}
             </Moment>
             <h2 className='font-black tracking-wide text-2xl pt-3 pb-2'>
               {post.title}
             </h2>
-            <div className='flex gap-2 items-center text-sm font-medium text-gray-500 tracking-wider pb-3'>
+            <div className='flex gap-2 items-center text-sm font-medium tracking-wider pb-3 text-gray-500'>
               By
               {post.author.image && post.author.image.asset && (
                 <img
@@ -61,7 +61,7 @@ const Posts = () => {
               )}
               <div className=''>{post.author.name}</div>
             </div>
-            <p className='text-sm font-medium text-gray-500 tracking-wider leading-6 pb-6'>
+            <p className='text-base font-medium leading-6 pb-6 text-gray-500'>
               {post.description.slice(0, 200)}...
             </p>
             <button className='bg-black py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg'>
