@@ -30,9 +30,9 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className='px-2 sm:px-10 md:px-3 py-10 bg-[#f3f4f5] grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+    <div className='px-2 sm:px-10 md:px-3 py-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-auto'>
       {posts.map((post) => (
-        <div key={post._id} className='shadow-2xl rounded-md'>
+        <div key={post._id} className='rounded-md shadow-2xl'>
           {post.mainImage && post.mainImage.asset && (
             <img
               src={post.mainImage.asset.url}
@@ -40,14 +40,16 @@ const Posts = () => {
               className='object-fit h-80 w-full'
             />
           )}
-          <div className='bg-white px-3 sm:px-5 py-6'>
+          <div className='bg-white px-3 sm:px-5 py-6 h-auto'>
             <Moment
               fromNow
               className='text-sm font-medium text-gray-500 tracking-wider'
             >
-              {post.publishedAt} 
+              {post.publishedAt}
             </Moment>
-            <h2 className='font-black tracking-wide text-2xl pt-3 pb-2'>{post.title}</h2>
+            <h2 className='font-black tracking-wide text-2xl pt-3 pb-2'>
+              {post.title}
+            </h2>
             <div className='flex gap-2 items-center text-sm font-medium text-gray-500 tracking-wider pb-3'>
               By
               {post.author.image && post.author.image.asset && (
@@ -59,10 +61,10 @@ const Posts = () => {
               )}
               <div className=''>{post.author.name}</div>
             </div>
-            <p className='text-sm font-medium text-gray-500 tracking-wider pb-6'>
+            <p className='text-sm font-medium text-gray-500 tracking-wider leading-6 pb-6'>
               {post.description.slice(0, 200)}...
             </p>
-            <button className='bg-black py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest'>
+            <button className='bg-black py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg'>
               Read more
             </button>
           </div>
