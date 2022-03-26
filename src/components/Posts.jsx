@@ -30,7 +30,7 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className='px-5 py-10 bg-[#f3f4f5]'>
+    <div className='px-5 py-10 bg-[#f3f4f5] grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
       {posts.map((post) => (
         <div key={post._id} className='shadow-2xl rounded-md'>
           {post.mainImage && post.mainImage.asset && (
@@ -43,11 +43,16 @@ const Posts = () => {
           <div className='bg-white px-3 py-5'>
             <Moment dateToFormat={post.publishedAt} fromNow />
             <h2 className='font-black text-2xl'>{post.title}</h2>
-            <div className=''>
-              {/* By
+            <div className='flex'>
+              By
               {post.author.image && post.author.image.asset && (
-                <img src={post.author.asset.url} alt='' />
-              )} */}
+                <img
+                  src={post.author.image.asset.url}
+                  alt=''
+                  className='w-8 rounded-full'
+                />
+              )}
+              <div className=''>{post.author.name}</div>
             </div>
             <p>{post.description.slice(0, 200)}</p>
           </div>
