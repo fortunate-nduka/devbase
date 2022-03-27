@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import { HiMenuAlt3 } from 'react-icons/hi';
 
 const Header = () => {
   return (
-    <header className='flex items-center justify-between h-20 px-5'>
+    <header className='bg-white flex items-center justify-between h-20 px-5'>
       <Link to='/'>
-        <img src={logo} alt='logo' className='cursor-pointer w-14' />
+        <img src={logo} alt='logo' className='cursor-pointer w-12 md:w-14' />
       </Link>
-      <GiHamburgerMenu className='cursor-pointer text-3xl' />
+      <HiMenuAlt3 className='cursor-pointer text-3xl' />
     </header>
   );
 };
