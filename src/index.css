@@ -4,6 +4,6 @@
 
 @layer base{
     body{
-        @apply font-inter tracking-wider;
+        @apply font-inter tracking-wider text-sm md:text-sm lg:text-base;
     }
 }
