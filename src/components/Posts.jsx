@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import client from '../client';
 import Moment from 'react-moment';
 import { FiChevronRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -10,17 +11,14 @@ const Posts = () => {
     client
       .fetch(
         `
-    *[_type == "post"]{
+    *[_type == "post"] | order(_createdAt asc){
       _id,
       title,
       slug,
       description,
       body,
       publishedAt,
-      author->{
-        name,image{
-          asset->{url}}
-        },
+      "name": author->name,
       mainImage{
         asset->{_id,url}
       },
@@ -45,15 +43,16 @@ const Posts = () => {
             <div className='flex items-center gap-4 text-xs font-medium'>
               <Moment fromNow className=''>
                 {post.publishedAt}
-              </Moment> {" - "}
-              <div className=''>{post.author.name}</div>
+              </Moment>{' '}
+              {' - '}
+              <div className=''>{post.name}</div>
             </div>
             {post.title.length >= 50 ? (
               <h2 className='font-black tracking-wide text-2xl pt-4 pb-4'>
                 {post.title.slice(0, 50)}...
               </h2>
             ) : (
-              <h2 className='font-black tracking-wide text-2xl pt-4 pb-4'>
+              <h2 className='font-black tracking-wide text-xl lg:text-2xl pt-4 pb-4'>
                 {post.title}
               </h2>
             )}
@@ -70,11 +69,13 @@ const Posts = () => {
               <div className=''>{post.author.name}</div>
             </div> */}
             <p className='leading-[27px]  pb-6 font-medium'>
-              {post.description.slice(0, 200)}...
+              {post.description.slice(0, 150)}...
             </p>
-            <button className='bg-black py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg flex items-center gap-2'>
-              Read more <FiChevronRight />
-            </button>
+            <Link to={`/${post.slug.current}`}>
+              <button className='bg-black py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg flex items-center gap-2'>
+                Read more <FiChevronRight />
+              </button>
+            </Link>
           </div>
         </div>
       ))}
