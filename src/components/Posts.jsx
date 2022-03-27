@@ -69,7 +69,7 @@ const Posts = () => {
               )}
               <div className=''>{post.author.name}</div>
             </div> */}
-            <p className='leading-6  pb-6'>
+            <p className='leading-[27px]  pb-6 font-medium'>
               {post.description.slice(0, 200)}...
             </p>
             <button className='bg-black py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg flex items-center gap-2'>
