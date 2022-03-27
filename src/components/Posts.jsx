@@ -31,7 +31,7 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className='bg-[#f3f4f6] px-3 sm:px-10 md:px-5 lg:px-10 xl:px-5 py-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 h-auto'>
+    <div className='bg-[#f3f4f6] px-5 sm:px-10 md:px-5 lg:px-10 xl:px-5 py-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 h-auto'>
       {posts.map((post) => (
         <div key={post._id} className='bg-white rounded-md shadow-2xl'>
           {post.mainImage && post.mainImage.asset && (
@@ -49,11 +49,11 @@ const Posts = () => {
               <div className=''>{post.author.name}</div>
             </div>
             {post.title.length >= 50 ? (
-              <h2 className='font-black tracking-wide text-2xl pt-3 pb-2'>
+              <h2 className='font-black tracking-wide text-2xl pt-4 pb-4'>
                 {post.title.slice(0, 50)}...
               </h2>
             ) : (
-              <h2 className='font-black tracking-wide text-2xl pt-3 pb-4'>
+              <h2 className='font-black tracking-wide text-2xl pt-4 pb-4'>
                 {post.title}
               </h2>
             )}
