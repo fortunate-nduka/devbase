@@ -42,23 +42,23 @@ const Posts = () => {
             />
           )}
           <div className='px-3 sm:px-5 py-6 border-t-[1px] border-gray-300'>
-            <Moment
-              fromNow
-              className='font-medium tracking-wider text-gray-400'
-            >
-              {post.publishedAt}
-            </Moment>
+            <div className='flex items-center gap-4 text-xs font-medium'>
+              <Moment fromNow className=''>
+                {post.publishedAt}
+              </Moment> {" - "}
+              <div className=''>{post.author.name}</div>
+            </div>
             {post.title.length >= 50 ? (
               <h2 className='font-black tracking-wide text-2xl pt-3 pb-2'>
                 {post.title.slice(0, 50)}...
               </h2>
             ) : (
-              <h2 className='font-black tracking-wide text-2xl pt-3 pb-2'>
+              <h2 className='font-black tracking-wide text-2xl pt-3 pb-4'>
                 {post.title}
               </h2>
             )}
 
-            <div className='flex gap-2 items-center tracking-wider pb-3 text-gray-400'>
+            {/* <div className='flex gap-2 items-center tracking-widest pb-5 text-gray-500'>
               By
               {post.author.image && post.author.image.asset && (
                 <img
@@ -68,8 +68,8 @@ const Posts = () => {
                 />
               )}
               <div className=''>{post.author.name}</div>
-            </div>
-            <p className='leading-6 font-medium pb-6 text-gray-600'>
+            </div> */}
+            <p className='leading-6  pb-6'>
               {post.description.slice(0, 200)}...
             </p>
             <button className='bg-black py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg flex items-center gap-2'>
