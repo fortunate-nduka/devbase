@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import client from '../client';
 import Moment from 'react-moment';
 import { FiChevronRight } from 'react-icons/fi';
@@ -26,6 +26,7 @@ const Posts = () => {
       )
       .then((data) => setPosts(data))
       .catch(console.error);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
