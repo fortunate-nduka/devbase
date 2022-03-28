@@ -3,7 +3,6 @@ import { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import client from '../client';
 import Header from '../components/Header';
-import bg from '../assets/11.png';
 
 const SinglePost = () => {
   const [postData, setPostData] = useState({});
@@ -25,15 +24,9 @@ const SinglePost = () => {
   return (
     <Fragment>
       <Header />
-      <div
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundAttachment: 'fixed',
-        }}
-        className='px-5 py-10 md:py-20'
-      >
+      <div className='px-3 py-10 md:py-10'>
         <BlockContent
-          className='prose prose-sm lg:prose-md mx-auto bg-white px-5 py-10 shadow-2xl max-w-4xl'
+          className='prose prose-sm lg:prose-base mx-auto max-w-4xl bg-white px-3 shadow-xl py-14'
           blocks={postData.body}
           projectId={client.clientConfig.projectId}
           dataset={client.clientConfig.dataset}
