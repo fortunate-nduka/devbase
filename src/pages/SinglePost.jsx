@@ -30,10 +30,10 @@ const SinglePost = () => {
           backgroundImage: `url(${bg})`,
           backgroundAttachment: 'fixed',
         }}
-        className='py-10 md:py-20'
+        className='px-5 py-10 md:py-20'
       >
         <BlockContent
-          className='prose lg:prose-xl mx-auto bg-white px-5 py-10 shadow-2xl'
+          className='prose prose-sm lg:prose-md mx-auto bg-white px-5 py-10 shadow-2xl max-w-4xl'
           blocks={postData.body}
           projectId={client.clientConfig.projectId}
           dataset={client.clientConfig.dataset}
