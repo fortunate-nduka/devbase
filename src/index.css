@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    body{
-        @apply font-inter tracking-wider text-sm md:text-sm bg-[#f3f4f6] ;
-    }
+@layer base {
+  body {
+    @apply font-inter tracking-wider text-sm md:text-sm bg-[#f3f4f6] text-[rgba(0,0,0,0.8)];
+  }
+  img {
+    @apply w-full;
+  }
 }

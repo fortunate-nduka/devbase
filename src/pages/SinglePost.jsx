@@ -1,16 +1,18 @@
+import BlockContent from '@sanity/block-content-to-react';
 import { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import client from '../client';
 import Header from '../components/Header';
+import bg from '../assets/11.png';
 
 const SinglePost = () => {
-  const [postData, setPostData] = useState(null);
+  const [postData, setPostData] = useState({});
   const { slug } = useParams();
 
   useEffect(() => {
     client
       .fetch(
-        `*[slug.current == ${slug}]{
+        `*[slug.current == "${slug}"]{
           title,
           slug,
           body,
@@ -19,11 +21,24 @@ const SinglePost = () => {
       .then((data) => setPostData(data[0]))
       .catch(console.error);
   }, [slug]);
+
   return (
     <Fragment>
       <Header />
-      {postData.title && <div className='text-7xl'>{postData.title}</div>}
-      <div>{postData.slug}</div>
+      <div
+        style={{
+          backgroundImage: `url(${bg})`,
+          backgroundAttachment: 'fixed',
+        }}
+        className='py-10 md:py-20'
+      >
+        <BlockContent
+          className='prose lg:prose-xl mx-auto bg-white px-5 py-10 shadow-2xl'
+          blocks={postData.body}
+          projectId={client.clientConfig.projectId}
+          dataset={client.clientConfig.dataset}
+        />
+      </div>
     </Fragment>
   );
 };

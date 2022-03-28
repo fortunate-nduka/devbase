@@ -11,7 +11,7 @@ const Posts = () => {
     client
       .fetch(
         `
-    *[_type == "post"] | order(_createdAt asc){
+    *[_type == "post"] | order(_createdAt desc){
       _id,
       title,
       slug,
@@ -72,7 +72,7 @@ const Posts = () => {
               {post.description.slice(0, 150)}...
             </p>
             <Link to={`/${post.slug.current}`}>
-              <button className='bg-black py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg flex items-center gap-2'>
+              <button className='bg-[rgba(0,0,0,.8)] py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg flex items-center gap-2'>
                 Read more <FiChevronRight />
               </button>
             </Link>
