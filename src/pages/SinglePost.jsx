@@ -24,9 +24,9 @@ const SinglePost = () => {
   return (
     <Fragment>
       <Header />
-      <div className='px-3 py-10 md:py-10'>
+      <div className='px-3 py-16 md:py-24'>
         <BlockContent
-          className='prose prose-sm lg:prose-base mx-auto max-w-4xl bg-white px-3 shadow-xl py-14'
+          className='prose prose-sm lg:prose-base mx-auto max-w-4xl text-black'
           blocks={postData.body}
           projectId={client.clientConfig.projectId}
           dataset={client.clientConfig.dataset}

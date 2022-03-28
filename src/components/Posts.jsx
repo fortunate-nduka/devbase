@@ -68,11 +68,11 @@ const Posts = () => {
               )}
               <div className=''>{post.author.name}</div>
             </div> */}
-            <p className='leading-[27px]  pb-6 font-medium'>
+            <p className='leading-[27px] text-black pb-6 font-medium'>
               {post.description.slice(0, 150)}...
             </p>
             <Link to={`/${post.slug.current}`}>
-              <button className='bg-[rgba(0,0,0,.8)] py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg flex items-center gap-2'>
+              <button className='bg-[rgba(0,0,0,.9)] py-3 px-6 text-sm font-semibold text-white cursor-pointer tracking-widest shadow-lg flex items-center gap-2'>
                 Read more <FiChevronRight />
               </button>
             </Link>
