@@ -1,5 +1,5 @@
 import BlockContent from '@sanity/block-content-to-react';
-import { Fragment, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import client from '../client';
 import Footer from '../components/Footer';
@@ -33,18 +33,18 @@ const SinglePost = ({ loading, setLoading, posts }) => {
   ) : !postData ? (
     <NotFound />
   ) : (
-    <Fragment>
+    <div className='min-h-screen flex flex-col'>
       <Header />
       <div className='px-5 pt-14 md:pt-20 bg-white'>
         <BlockContent
-          className='prose prose-sm lg:prose-base mx-auto max-w-3xl text-black bg-white'
+          className='prose prose-sm lg:prose-base mx-auto max-w-3xl text-black bg-white mb-auto'
           blocks={postData.body}
           projectId={client.clientConfig.projectId}
           dataset={client.clientConfig.dataset}
         />
       </div>
       <Footer />
-    </Fragment>
+    </div>
   );
 };
 export default SinglePost;

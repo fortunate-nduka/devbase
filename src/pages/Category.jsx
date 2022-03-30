@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import client from '../client';
@@ -7,6 +7,7 @@ import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import Footer from '../components/Footer';
+import NotFound from './NotFound';
 
 const Category = ({ loading, setLoading }) => {
   const [posts, setPosts] = useState([]);
@@ -40,10 +41,12 @@ const Category = ({ loading, setLoading }) => {
 
   return loading ? (
     <Loading />
+  ) : posts.length < 1 ? (
+    <NotFound />
   ) : (
-    <Fragment>
+    <div className='min-h-screen flex flex-col'>
       <Header />
-      <div className='px-5 sm:px-10 md:px-5 lg:px-10 xl:px-5 pt-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 h-auto max-w-[100rem] mx-auto'>
+      <div className='px-5 sm:px-10 md:px-5 lg:px-10 xl:px-5 pt-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 h-auto max-w-[100rem] mx-auto mb-auto'>
         {posts.map((post) => (
           <div key={post._id} className='bg-white rounded-md shadow-2xl'>
             {post.mainImage && post.mainImage.asset && (
@@ -82,8 +85,8 @@ const Category = ({ loading, setLoading }) => {
           </div>
         ))}
       </div>
-      {posts && <Footer />}
-    </Fragment>
+      <Footer />
+    </div>
   );
 };
 export default Category;

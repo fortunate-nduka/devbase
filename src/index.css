@@ -4,9 +4,12 @@
 
 @layer base {
   body {
-    @apply font-inter tracking-wider text-sm md:text-sm bg-[#f3f4f6] text-[rgba(0,0,0,0.9)];
+    @apply font-inter tracking-wider text-sm md:text-sm bg-[#f3f4f6] text-[rgba(0,0,0,0.9)] min-h-screen;
   }
   img {
     @apply w-full;
+  }
+  .contentheight {
+    min-height: calc(90vh - 21vh);
   }
 }

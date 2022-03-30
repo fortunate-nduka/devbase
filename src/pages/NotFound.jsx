@@ -3,7 +3,7 @@ import { BsArrowRight } from 'react-icons/bs';
 
 const NotFound = () => {
   return (
-    <div className='h-screen flex flex-col items-center justify-center text-2xl lg:text-3xl gap-3 lg:gap-5'>
+    <div className='fixed top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center text-2xl lg:text-3xl gap-3 lg:gap-5'>
       <div className='font-black tracking-widest'>
         404 {' | '} Page Not Found
       </div>

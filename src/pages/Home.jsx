@@ -1,11 +1,10 @@
-import { Fragment } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Posts from '../components/Posts';
 
 const Home = ({ loading, setLoading, posts, setPosts }) => {
   return (
-    <Fragment>
+    <div className='min-h-screen flex flex-col'>
       <Header />
       <Posts
         loading={loading}
@@ -13,8 +12,8 @@ const Home = ({ loading, setLoading, posts, setPosts }) => {
         posts={posts}
         setPosts={setPosts}
       />
-      {posts && <Footer />}
-    </Fragment>
+      <Footer />
+    </div>
   );
 };
 export default Home;
