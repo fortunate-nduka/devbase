@@ -35,7 +35,7 @@ const SinglePost = ({ loading, setLoading, posts }) => {
   ) : (
     <div className='min-h-screen flex flex-col'>
       <Header />
-      <div className='px-5 pt-14 md:pt-20 bg-white'>
+      <div className='px-5 pt-14 pb-5 md:pb-10 md:pt-20 bg-white'>
         <BlockContent
           className='prose prose-sm lg:prose-base mx-auto max-w-3xl text-black bg-white mb-auto'
           blocks={postData.body}
