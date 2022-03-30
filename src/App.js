@@ -7,12 +7,13 @@ import SinglePost from './pages/SinglePost';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState([]);
 
   return (
     <Routes>
       <Route
         path='/'
-        element={<Home loading={loading} setLoading={setLoading} />}
+        element={<Home loading={loading} setLoading={setLoading} posts={posts} setPosts={setPosts} />}
       />
       <Route
         path='/category/:slug'

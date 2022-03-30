@@ -82,7 +82,7 @@ const Category = ({ loading, setLoading }) => {
           </div>
         ))}
       </div>
-      <Footer />
+      {posts && <Footer />}
     </Fragment>
   );
 };

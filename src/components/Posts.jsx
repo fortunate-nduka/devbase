@@ -1,13 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import client from '../client';
 import Moment from 'react-moment';
 import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import Loading from '../pages/Loading';
 
-const Posts = ({ loading, setLoading }) => {
-  const [posts, setPosts] = useState([]);
-
+const Posts = ({ loading, setLoading, posts, setPosts }) => {
   useEffect(() => {
     setLoading(true);
     client
