@@ -36,7 +36,7 @@ const Posts = ({ loading, setLoading }) => {
   return loading ? (
     <Loading />
   ) : (
-    <div className='px-5 sm:px-10 md:px-5 lg:px-10 xl:px-5 py-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 h-auto max-w-[100rem] mx-auto'>
+    <div className='px-5 sm:px-10 md:px-5 lg:px-10 xl:px-5 pt-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 h-auto max-w-[100rem] mx-auto'>
       {posts.map((post) => (
         <div key={post._id} className='bg-white rounded-md shadow-2xl'>
           {post.mainImage && post.mainImage.asset && (
@@ -63,18 +63,6 @@ const Posts = ({ loading, setLoading }) => {
                 {post.title}
               </h2>
             )}
-
-            {/* <div className='flex gap-2 items-center tracking-widest pb-5 text-gray-500'>
-              By
-              {post.author.image && post.author.image.asset && (
-                <img
-                  src={post.author.image.asset.url}
-                  alt=''
-                  className='w-8 rounded-full'
-                />
-              )}
-              <div className=''>{post.author.name}</div>
-            </div> */}
             <p className='leading-[27px] text-black pb-6 font-medium'>
               {post.description.slice(0, 150)}...
             </p>

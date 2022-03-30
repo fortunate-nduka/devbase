@@ -26,15 +26,15 @@ const Header = () => {
   }, []);
 
   return (
-    <header className='bg-white flex items-center justify-between h-16 lg:h-20 px-5 border-b-4 border-b-[#f3f4f6]'>
+    <header className='bg-white flex items-center justify-between h-20 px-5 border-b-4 border-b-[#f3f4f6]'>
       <Link to='/'>
         <img src={logo} alt='logo' className='cursor-pointer w-12 md:w-14' />
       </Link>
-      <div className='flex items-center gap-10 uppercase font-medium text-gray-700 lg:text-base'>
+      <div className='flex items-center gap-10 uppercase font-medium lg:text-base tracking-wider'>
         <Link to='/'>Home</Link>
         <Menu as='div' className='relative inline-block text-left'>
           <div>
-            <Menu.Button className='inline-flex items-center justify-center lg:text-base font-medium text-gray-700 hover:bg-gray-50 uppercase'>
+            <Menu.Button className='inline-flex items-center justify-center lg:text-base font-medium tracking-wider hover:bg-gray-50 uppercase'>
               categories
               <BsChevronDown className='ml-1 w-3' aria-hidden='true' />
             </Menu.Button>
@@ -49,7 +49,7 @@ const Header = () => {
             leaveFrom='transform opacity-100 scale-100'
             leaveTo='transform opacity-0 scale-95'
           >
-            <Menu.Items className='origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-2 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none'>
+            <Menu.Items className='origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-2 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none tracking-wider'>
               {categories.map((category) => (
                 <div key={category._id} className='py-2'>
                   <Menu.Item>

@@ -2,6 +2,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import client from '../client';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Loading from './Loading';
 import NotFound from './NotFound';
@@ -34,7 +35,7 @@ const SinglePost = ({ loading, setLoading, posts }) => {
   ) : (
     <Fragment>
       <Header />
-      <div className='px-5 py-14 md:py-20 bg-white'>
+      <div className='px-5 pt-14 md:pt-20 bg-white'>
         <BlockContent
           className='prose prose-sm lg:prose-base mx-auto max-w-3xl text-black bg-white'
           blocks={postData.body}
@@ -42,6 +43,7 @@ const SinglePost = ({ loading, setLoading, posts }) => {
           dataset={client.clientConfig.dataset}
         />
       </div>
+      <Footer />
     </Fragment>
   );
 };

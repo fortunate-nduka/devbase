@@ -6,6 +6,7 @@ import Moment from 'react-moment';
 import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
+import Footer from '../components/Footer';
 
 const Category = ({ loading, setLoading }) => {
   const [posts, setPosts] = useState([]);
@@ -42,7 +43,7 @@ const Category = ({ loading, setLoading }) => {
   ) : (
     <Fragment>
       <Header />
-      <div className='px-5 sm:px-10 md:px-5 lg:px-10 xl:px-5 py-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 h-auto max-w-[100rem] mx-auto'>
+      <div className='px-5 sm:px-10 md:px-5 lg:px-10 xl:px-5 pt-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 h-auto max-w-[100rem] mx-auto'>
         {posts.map((post) => (
           <div key={post._id} className='bg-white rounded-md shadow-2xl'>
             {post.mainImage && post.mainImage.asset && (
@@ -81,6 +82,7 @@ const Category = ({ loading, setLoading }) => {
           </div>
         ))}
       </div>
+      <Footer />
     </Fragment>
   );
 };
