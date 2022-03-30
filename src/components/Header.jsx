@@ -30,12 +30,12 @@ const Header = () => {
       <Link to='/'>
         <img src={logo} alt='logo' className='cursor-pointer w-12 md:w-14' />
       </Link>
-      <div className='flex items-center gap-7 lg:gap-10 uppercase font-medium tracking-wider'>
+      <div className='flex items-center gap-7 lg:gap-10 font-medium tracking-wider'>
         <Link to='/'>Home</Link>
         <Menu as='div' className='relative inline-block text-left'>
           <div>
-            <Menu.Button className='inline-flex items-center justify-center font-medium tracking-wider hover:bg-gray-50 uppercase'>
-              categories
+            <Menu.Button className='inline-flex items-center justify-center font-medium tracking-wider hover:bg-gray-50'>
+              Categories
               <BsChevronDown className='ml-1 w-3' aria-hidden='true' />
             </Menu.Button>
           </div>
