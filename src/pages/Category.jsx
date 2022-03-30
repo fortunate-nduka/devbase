@@ -35,7 +35,7 @@ const Category = ({ loading, setLoading }) => {
       .catch(console.error);
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 700);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
 

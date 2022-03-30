@@ -27,7 +27,7 @@ const Posts = ({ loading, setLoading, posts, setPosts }) => {
       .then((data) => setPosts(data));
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 700);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
