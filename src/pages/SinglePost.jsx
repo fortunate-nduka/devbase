@@ -23,7 +23,7 @@ const SinglePost = ({ loading, setLoading, posts }) => {
       .then((data) => setPostData(data[0]));
     setTimeout(() => {
       setLoading(false);
-    }, 700);
+    }, 500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
 
@@ -34,7 +34,7 @@ const SinglePost = ({ loading, setLoading, posts }) => {
   ) : (
     <Fragment>
       <Header />
-      <div className='px-5 py-16 md:py-24 bg-white'>
+      <div className='px-5 py-14 md:py-20 bg-white'>
         <BlockContent
           className='prose prose-sm lg:prose-base mx-auto max-w-3xl text-black bg-white'
           blocks={postData.body}

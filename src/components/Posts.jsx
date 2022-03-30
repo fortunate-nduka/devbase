@@ -3,11 +3,13 @@ import client from '../client';
 import Moment from 'react-moment';
 import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import Loading from '../pages/Loading';
 
-const Posts = () => {
+const Posts = ({ loading, setLoading }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    setLoading(true);
     client
       .fetch(
         `
@@ -24,12 +26,16 @@ const Posts = () => {
       },
     }`
       )
-      .then((data) => setPosts(data))
-      .catch(console.error);
+      .then((data) => setPosts(data));
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div className='px-5 sm:px-10 md:px-5 lg:px-10 xl:px-5 py-10 grid gap-x-5 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 h-auto max-w-[100rem] mx-auto'>
       {posts.map((post) => (
         <div key={post._id} className='bg-white rounded-md shadow-2xl'>
